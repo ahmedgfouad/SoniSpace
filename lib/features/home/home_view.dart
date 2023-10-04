@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
-import 'package:sonispace/features/explor/explor_view.dart';
+import 'package:sonispace/core/widgets/custom_app_bar_widget.dart';
+import 'package:sonispace/features/home/widgets/botton_type_widget.dart';
+import 'package:sonispace/features/home/widgets/scrolleing_home_widget.dart';
 
 class Homeviwe extends StatelessWidget {
   const Homeviwe({super.key});
@@ -23,7 +24,27 @@ class Homeviwe extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Column( 
+          child: const Padding(
+            padding: EdgeInsets.only(left: 26, top: 15),
+            child: CustomScrollView(
+              physics: BouncingScrollPhysics(),
+              shrinkWrap: true,
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      CustomAppBarWidget(tittle: 'Your Space'),
+                      SizedBox(height: 20),
+                      BottonTypeWidget(),
+                      SizedBox(height: 13),
+                    ],
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Expanded(child: ScrollingHomeWidget()),
+                )
+              ],
+            ),
           ),
         ),
       ),
