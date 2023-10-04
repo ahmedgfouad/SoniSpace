@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:sonispace/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import 'package:sonispace/features/bottom_nav_bar/view_model/nav_bar_controller.dart';
 
+import 'features/auth/onboarding_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'SoniSpace',
           theme: ThemeData.dark(), 
-          home: const BottomNavBarView(),
+          home: const OnboardingView(),
         ),
       ),
     );
