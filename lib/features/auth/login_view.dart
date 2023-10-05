@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import '../../core/utils/app_images.dart';
-import '../widgets/button.dart';
-import '../widgets/form.dart';
+import '../../core/widgets/auth_widgets/custom_button.dart';
+import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
 
 
 class LoginView extends StatefulWidget {

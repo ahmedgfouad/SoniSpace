@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
-import 'package:sonispace/features/widgets/button.dart';
+
+import '../../core/widgets/auth_widgets/custom_button.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -36,6 +37,7 @@ class OnboardingView extends StatelessWidget {
               const Text(
                 "      SoniSpace makes you explore universe sounds and live with these magical sounds",
                 style: AppStyles.textStyle20,
+                textAlign: TextAlign.start,
               ),
               const SizedBox(height: 30.0,),
               CustomButton(onPressed: (){},

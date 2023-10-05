@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/app_colors.dart';
+ import '../../utils/app_colors.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final String hint;
@@ -66,15 +66,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         iconColor: AppColors.white,
         filled: true,
         hintText: widget.hint,
-        hintStyle: const TextStyle(color: AppColors.white, fontWeight: FontWeight.w600),
+        hintStyle:   const TextStyle(color: AppColors.white, fontWeight: FontWeight.w600),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.borderRadius),
-          borderSide: const BorderSide(color: AppColors.white, width: 3
+          borderSide:   const BorderSide(color: AppColors.white, width: 3
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.borderRadius),
-          borderSide: const BorderSide(color: AppColors.white, width: 3
+          borderSide:   const BorderSide(color: AppColors.white, width: 3
           ),
         ),
         errorBorder: OutlineInputBorder(
@@ -122,5 +122,5 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 //     );
 //   }
 //   return null;
-// }
 }
+// }

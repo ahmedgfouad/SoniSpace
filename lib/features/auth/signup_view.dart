@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import '../../core/utils/app_images.dart';
-import '../widgets/button.dart';
-import '../widgets/form.dart';
+import '../../core/widgets/auth_widgets/custom_button.dart';
+import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
 
 
 class SignupView extends StatefulWidget {
@@ -125,7 +125,6 @@ class _SignupViewState extends State<SignupView> {
                       title: 'Signup',
                       titleColor: AppColors.black,
                       width: MediaQuery.of(context).size.width * 0.88,
-                      backgroundColor: AppColors.white,
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           usernameController.text;
