@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/widgets/button.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -27,7 +28,7 @@ class OnboardingView extends StatelessWidget {
                 "SONISPACE",
                 style: AppStyles.textStyle36,
               ),
-              SizedBox(height: MediaQuery.of(context).size.height*0.45,),
+              SizedBox(height: MediaQuery.of(context).size.height*0.4,),
               const Text(
                 "Explore the Universe! ",
                 style: AppStyles.textStyle36,
@@ -35,6 +36,11 @@ class OnboardingView extends StatelessWidget {
               const Text(
                 "      SoniSpace makes you explore universe sounds and live with these magical sounds",
                 style: AppStyles.textStyle20,
+              ),
+              const SizedBox(height: 30.0,),
+              CustomButton(onPressed: (){},
+                title: "Explore",
+                borderRadius: 30.0,
               ),
             ],
           ),
