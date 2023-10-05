@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
-import 'package:sonispace/core/widgets/auth_widgets/custom_button.dart';
+import 'package:sonispace/features/setting/view_model/setting_abb_widget.dart';
+import 'package:sonispace/features/setting/view_model/setting_controller.dart';
+import 'package:sonispace/features/setting/widgets/list_tile_setting_widget.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -27,6 +28,7 @@ class SettingsView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -34,78 +36,34 @@ class SettingsView extends StatelessWidget {
                     "Settings",
                     style: AppStyles.textStyle28,
                   ),
-                  const SizedBox(height: 10,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                        child: Text(
-                          "N",
-                          style:
-                              AppStyles.textStyle28.copyWith(color: Colors.black),
-                        ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SettingBarWidget(),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Account",
+                    style: AppStyles.textStyle20,
+                  ),
+                  const SizedBox(height: 7),
+                  SizedBox(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) => ListTileSetingWidget(
+                        title: SettingController().profileInfo["$index"][0],
+                        subtitle: SettingController().profileInfo["$index"][1],
                       ),
-                      const SizedBox(
-                        width: 12,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Nasa",
-                            style: AppStyles.textStyle20,
-                          ),
-                          Text(
-                            "View profile",
-                            style: AppStyles.textStyle16
-                                .copyWith(color: AppColors.greyDiscription),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      CustomButton(
-                        width: 81.w,
-                        height: 31.h,
-                        titleColor: AppColors.white,
-                        borderRadius: 16.r,
-                        title: 'Edit profile',
-                        verticalPadding: 0,
-                        textStyle: AppStyles.textStyle12,
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios)),
-                    ],
-                  ),
-                  const SizedBox(height: 10,),
-                  const Text("Account", style: AppStyles.textStyle20,),
-                  const SizedBox(height: 7,),
-                  const ListTile(title: Text("E-mail", style: AppStyles.textStyle18,),
-                    subtitle: Text("Nasa_gamil.com", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Notifications", style: AppStyles.textStyle18,),
-                    subtitle: Text("turned on", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Your plan", style: AppStyles.textStyle18,),
-                    subtitle: Text("Free plan", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Privacy Policy", style: AppStyles.textStyle18,),
-                    subtitle: Text("Important for both of us", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Version", style: AppStyles.textStyle18,),
-                    subtitle: Text("0.1 s", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Support", style: AppStyles.textStyle18,),
-                    subtitle: Text("Get help from us and the community", style: AppStyles.textStyle16,),
-                  ),
-                  const ListTile(title: Text("Support", style: AppStyles.textStyle18,),
-                    subtitle: Text("Get help from us and the community", style: AppStyles.textStyle16,),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 16),
+                      itemCount: 6,
+                    ),
                   ),
                   const ListTile(
-                    title: Text("Log out", style: AppStyles.textStyle20,),
+                    title: Text(
+                      "Log out",
+                      style: AppStyles.textStyle20,
+                    ),
                   ),
                 ],
               ),
