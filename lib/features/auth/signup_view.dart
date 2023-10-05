@@ -140,12 +140,12 @@ class _SignupViewState extends State<SignupView> {
                   CustomButton(
                       width: MediaQuery.of(context).size.width * 0.88,
                       height: 31.h,
-                      backgroundColor: AppColors.white,
+                      backgroundColor: AppColors.burple,
                       borderRadius: 16.r,
                       title: 'Signup',
                       verticalPadding: 0,
                       textStyle: AppStyles.textStyle12
-                          .copyWith(color: AppColors.black),
+                          .copyWith(color: AppColors.white),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           usernameController.text;

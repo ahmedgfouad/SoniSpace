@@ -3,18 +3,19 @@ import 'package:sonispace/core/utils/app_styles.dart';
 
 class ListTileSetingWidget extends StatelessWidget {
   final String title;
-  final String subtitle; 
-  const ListTileSetingWidget({super.key, required this.title, required this.subtitle});
+  final String subtitle;
+  const ListTileSetingWidget(
+      {super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
+    return ListTile(
       title: Text(
-        "Support",
+        title,
         style: AppStyles.textStyle18,
       ),
       subtitle: Text(
-        "Get help from us and the community",
+        subtitle,
         style: AppStyles.textStyle16,
       ),
     );

@@ -17,3 +17,4 @@ class AppImages {
   static const String exploreImage = "assets/images/Rectangle_43.png";
   static const String soundImage = "assets/images/Rectangle.png";
 }
+// 
