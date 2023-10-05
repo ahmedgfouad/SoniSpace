@@ -17,7 +17,7 @@ class OnboardingView extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-            AppImages.authBackGroundImage,
+            AppImages.splashImage,
           ),
           fit: BoxFit.fitHeight,
         )),

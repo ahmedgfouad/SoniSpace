@@ -33,7 +33,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             provider.listOfNavigationBarIcons.length,
             (index) => GestureDetector(
               onTap: () {
-                provider.updateCurentIndex(index);
+                provider.updateCurrentIndex(index);
               },
               child: Container(
                 color: Colors.transparent,
@@ -46,7 +46,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                         width: MediaQuery.of(context).size.width * 0.034,
                         height: MediaQuery.of(context).size.height * 0.034,
                         colorFilter: ColorFilter.mode(
-                          index == provider.curentIndex
+                          index == provider.currentIndex
                               ? AppColors.orange
                               : AppColors.white,
                           BlendMode.srcATop,

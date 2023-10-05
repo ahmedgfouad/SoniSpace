@@ -21,7 +21,7 @@ class LibraryItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
           child: Image.asset(
-            AppImages.librayImage,
+            AppImages.libraryImage,
             fit: BoxFit.fill,
           ),
         ),

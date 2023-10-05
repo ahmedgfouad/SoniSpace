@@ -44,7 +44,7 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset(AppImages.sppedIcon),
+            Image.asset(AppImages.spedIcon),
             Image.asset(AppImages.backTenSecondIcon),
             const CircleAvatar(
               radius: 30,
