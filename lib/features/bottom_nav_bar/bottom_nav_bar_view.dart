@@ -16,7 +16,7 @@ class BottomNavBarView extends StatelessWidget {
       child,
     ) {
       return Scaffold(
-        body: provider.listOfNavigationBarScreens[provider.curentIndex],
+        body: provider.listOfNavigationBarScreens[provider.currentIndex],
         bottomNavigationBar: const NavigationBarWidget(),
       );
     });
