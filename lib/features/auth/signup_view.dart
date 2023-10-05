@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/auth/login_view.dart';
 import '../../core/utils/app_images.dart';
 import '../../core/widgets/auth_widgets/custom_button.dart';
 import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
-
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
@@ -29,7 +31,6 @@ class _SignupViewState extends State<SignupView> {
     confirmPasswordController = TextEditingController();
   }
 
-
   @override
   void dispose() {
     usernameController.dispose();
@@ -45,15 +46,18 @@ class _SignupViewState extends State<SignupView> {
       body: Form(
         key: _formKey,
         child: Container(
+          height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
-              color: Colors.transparent,
-              image: DecorationImage(
-                image: AssetImage(
-                  AppImages.authBackGroundImage,
-                ),
-                fit: BoxFit.fitHeight,
-              )),
+            color: Colors.transparent,
+            image: DecorationImage(
+              image: AssetImage(
+                AppImages.authBackGroundImage,
+              ),
+              fit: BoxFit.fitHeight,
+            ),
+          ),
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -61,9 +65,17 @@ class _SignupViewState extends State<SignupView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("Signup", style: AppStyles.textStyle36,),
-                  const SizedBox(height: 20,),
-                  const Text("Please enter your Personal information", style: AppStyles.textStyle16,),
+                  const Text(
+                    "Signup",
+                    style: AppStyles.textStyle36,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Please enter your Personal information",
+                    style: AppStyles.textStyle16,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -96,7 +108,9 @@ class _SignupViewState extends State<SignupView> {
                       //return null;
                     },
                   ),
-                  const SizedBox(height: 25,),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   CustomTextFormField(
                     hint: "Password",
                     controller: passwordController,
@@ -107,7 +121,9 @@ class _SignupViewState extends State<SignupView> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 25,),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   CustomTextFormField(
                     hint: "Confirm Password",
                     controller: confirmPasswordController,
@@ -122,10 +138,15 @@ class _SignupViewState extends State<SignupView> {
                     height: 50.0,
                   ),
                   CustomButton(
-                      title: 'Signup',
-                      titleColor: AppColors.black,
                       width: MediaQuery.of(context).size.width * 0.88,
-                      onPressed: () async {
+                      height: 31.h,
+                      backgroundColor: AppColors.white,
+                      borderRadius: 16.r,
+                      title: 'Signup',
+                      verticalPadding: 0,
+                      textStyle: AppStyles.textStyle12
+                          .copyWith(color: AppColors.black),
+                      onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           usernameController.text;
                           emailController.text;
@@ -134,15 +155,27 @@ class _SignupViewState extends State<SignupView> {
                           // To dismiss keyboard
                           FocusScope.of(context).unfocus();
                         }
-                      }
+                      }),
+                  const SizedBox(
+                    height: 15,
                   ),
-                  const SizedBox(height: 15,),
-                  const Row(
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Already have an account?  ", style: AppStyles.textStyle16,),
-                      Text("Login", style: AppStyles.textStyle16,),
+                      const Text(
+                        "Already have an account?  ",
+                        style: AppStyles.textStyle16,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          defaultNavigator(context, const LoginView());
+                        },
+                        child: const Text(
+                          "Login",
+                          style: AppStyles.textStyle16,
+                        ),
+                      ),
                     ],
                   ),
                 ],

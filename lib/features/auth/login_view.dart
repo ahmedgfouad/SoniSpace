@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/auth/signup_view.dart';
+import 'package:sonispace/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import '../../core/utils/app_images.dart';
 import '../../core/widgets/auth_widgets/custom_button.dart';
 import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
-
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -25,7 +28,6 @@ class _LoginViewState extends State<LoginView> {
     passwordController = TextEditingController();
   }
 
-
   @override
   void dispose() {
     emailController.dispose();
@@ -40,7 +42,7 @@ class _LoginViewState extends State<LoginView> {
         key: _formKey,
         child: Container(
           decoration: const BoxDecoration(
-            color: Colors.transparent,
+              color: Colors.transparent,
               image: DecorationImage(
                 image: AssetImage(
                   AppImages.authBackGroundImage,
@@ -54,9 +56,17 @@ class _LoginViewState extends State<LoginView> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Login", style: AppStyles.textStyle36,),
-                const SizedBox(height: 20,),
-                const Text("Please enter your e-mail and password", style: AppStyles.textStyle16,),
+                const Text(
+                  "Login",
+                  style: AppStyles.textStyle36,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "Please enter your e-mail and password",
+                  style: AppStyles.textStyle16,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -89,36 +99,57 @@ class _LoginViewState extends State<LoginView> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Row(
                   children: [
-                    Text("Forget password?", style: AppStyles.textStyle16,),
+                    Text(
+                      "Forget password?",
+                      style: AppStyles.textStyle16,
+                    ),
                   ],
                 ),
                 const SizedBox(
                   height: 50.0,
                 ),
                 CustomButton(
-                    title: 'Login',
-                    titleColor: AppColors.black,
                     width: MediaQuery.of(context).size.width * 0.88,
+                    height: 31.h,
                     backgroundColor: AppColors.white,
-                    onPressed: () async {
+                    borderRadius: 16.r,
+                    title: 'Login',
+                    verticalPadding: 0,
+                    textStyle:
+                        AppStyles.textStyle12.copyWith(color: AppColors.black),
+                    onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         emailController.text;
                         passwordController.text;
-                        // To dismiss keyboard
                         FocusScope.of(context).unfocus();
+                        defaultNavigator(context, const BottomNavBarView());
                       }
-                    }
+                    }),
+                const SizedBox(
+                  height: 15,
                 ),
-                const SizedBox(height: 15,),
-                const Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don’t have an account?  ", style: AppStyles.textStyle16,),
-                    Text("Create One", style: AppStyles.textStyle16,),
+                    const Text(
+                      "Don’t have an account?  ",
+                      style: AppStyles.textStyle16,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        defaultNavigator(context, const SignupView());
+                      },
+                      child: const Text(
+                        "Create One",
+                        style: AppStyles.textStyle16,
+                      ),
+                    ),
                   ],
                 ),
               ],
