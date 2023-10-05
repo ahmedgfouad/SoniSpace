@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final double borderRadius;
   final double? titleSize;
-  final Color titleColor;
+  final Color? titleColor;
   final Color backgroundColor;
   final double? verticalPadding;
   final TextStyle? textStyle;
@@ -21,8 +21,8 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height,
     this.borderRadius = 12,
-    this.titleColor = Colors.white,
-    this.backgroundColor = Colors.orangeAccent,
+    this.titleColor ,
+    this.backgroundColor = Colors.transparent,
     this.verticalPadding,
     this.textStyle,
   }) : super(key: key);
@@ -43,7 +43,8 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           title!,
-          style: textStyle,
+
+          style: textStyle!.copyWith(color: titleColor),
         ),
       ),
     );
