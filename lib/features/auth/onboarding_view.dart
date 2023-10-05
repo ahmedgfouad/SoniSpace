@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sonispace/core/functions/navigator.dart';
+import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/auth/signup_view.dart';
@@ -15,6 +16,7 @@ class OnboardingView extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
+          color: AppColors.black,
             image: DecorationImage(
           image: AssetImage(
             AppImages.splashImage,
