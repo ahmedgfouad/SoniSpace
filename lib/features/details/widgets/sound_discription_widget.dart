@@ -40,6 +40,7 @@ class SoundDiscriptionWidget extends StatelessWidget {
               const LibraryItemWidget(
                 height: 46,
                 width: 44,
+                index: 0,
               ),
               CustomButton(
                 width: 104.w,

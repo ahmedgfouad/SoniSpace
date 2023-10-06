@@ -7,8 +7,8 @@ import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/features/bottom_nav_bar/view_model/nav_bar_controller.dart';
 
-class BottomNavBarView extends StatelessWidget {
-  const BottomNavBarView({
+class NavBarView extends StatelessWidget {
+  const NavBarView({
     Key? key,
   }) : super(key: key);
 
@@ -33,7 +33,7 @@ class BottomNavBarView extends StatelessWidget {
               SvgPicture.asset(AppImages.exploreIcon),
               SvgPicture.asset(AppImages.uploadIcon),
               SvgPicture.asset(AppImages.libraryIcon),
-              SvgPicture.asset(AppImages.settingIcon), 
+              SvgPicture.asset(AppImages.settingIcon),
             ],
             index: provider.currentIndex,
             onTap: (int index) {

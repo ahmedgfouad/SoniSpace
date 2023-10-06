@@ -7,12 +7,12 @@ import 'package:sonispace/features/details/widgets/sound_slider_dispoce_widget.d
 import 'package:sonispace/features/details/widgets/sound_tittle_image_widget.dart';
 
 class DetailsView extends StatelessWidget {
-  const DetailsView({super.key});
+  final String image; 
+  final String sound; 
+  const DetailsView({super.key, required this.image, required this.sound});
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
@@ -27,18 +27,19 @@ class DetailsView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Padding(
-            padding: EdgeInsets.only(left: 24, top: 16, right: 24),
+          child:  Padding(
+            padding: const EdgeInsets.only(left: 24, top: 16, right: 24),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  CustomAppBarDetailsWidget(),
-                  SoundTittleAndImageWidget(),
-                  SizedBox(height: 20),
-                  SoundSliderAndDisposeWidget(),
-                  SizedBox(height: 40),
-                  SoundDiscriptionWidget(),
+                  const CustomAppBarDetailsWidget(),
+                  SoundTittleAndImageWidget( image: image,
+                  ),
+                  const SizedBox(height: 20),
+                   const SoundSliderAndDisposeWidget(),
+                  const SizedBox(height: 40),
+                  const SoundDiscriptionWidget(),
                 ],
               ),
             ),

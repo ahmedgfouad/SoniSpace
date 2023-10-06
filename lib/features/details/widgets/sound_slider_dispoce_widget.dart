@@ -6,11 +6,13 @@ import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/view_model/details_controller.dart';
 
 class SoundSliderAndDisposeWidget extends StatelessWidget {
-  const SoundSliderAndDisposeWidget({super.key});
+  // final String sound;
+  const SoundSliderAndDisposeWidget({
+    super.key,
+  });
 
   @override
-  Widget build(BuildContext context) { 
-
+  Widget build(BuildContext context) {
     return Column(
       children: [
         SliderTheme(
@@ -64,7 +66,7 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
                     provider.audioStatues
                         ? provider.playAudio(
                             url:
-                                "https://filesamples.com/samples/audio/mp3/Symphony%20No.6%20(1st%20movement).mp3")
+                                "sounds/interstellar-science-fiction-sounds-8239.mp3")
                         : provider.stopAudio();
                   },
                   icon: provider.audioStatues

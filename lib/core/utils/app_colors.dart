@@ -8,4 +8,5 @@ class AppColors {
   static const Color greyDiscription = Color(0xFF9F9F9F);
   static const Color greytittle = Color(0xFFC4C4C4);
   static const Color greySlider = Color(0xFF858484);
+  static const Color containerBlack = Color(0xFF191C1E);
 }

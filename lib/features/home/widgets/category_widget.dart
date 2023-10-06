@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/home/view_model/home_controller.dart';
+import 'package:sonispace/features/home/widgets/custom_category_widget.dart';
 
 class CategoryTypeWidget extends StatelessWidget {
   final String categoryType;
@@ -24,16 +25,10 @@ class CategoryTypeWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 16.w),
             itemCount: 5,
-            itemBuilder: (context, index) => Container(
-              width: 145.w,
-              height: 148.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(23.r),
-              ),
-              child: Image.asset(
-                AppImages.homeImage,
-                fit: BoxFit.cover,
-              ),
+            itemBuilder: (context, index) => CustomContainer(
+              title: "Nipton",
+              description: "Description of the planet",
+              image: HomeController().popularImages[index],
             ),
           ),
         ),
