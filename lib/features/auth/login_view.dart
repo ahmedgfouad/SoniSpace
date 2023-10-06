@@ -110,24 +110,22 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 50.0,
-                ),
+                const SizedBox(height: 50.0),
                 CustomButton(
                     width: MediaQuery.of(context).size.width * 0.88,
                     height: 31.h,
-                    backgroundColor: AppColors.white,
+                    backgroundColor: AppColors.burple,
                     borderRadius: 16.r,
                     title: 'Login',
                     verticalPadding: 0,
                     textStyle:
-                        AppStyles.textStyle12.copyWith(color: AppColors.black),
+                        AppStyles.textStyle12.copyWith(color: AppColors.white),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         emailController.text;
                         passwordController.text;
                         FocusScope.of(context).unfocus();
-                        defaultNavigator(context, const BottomNavBarView());
+                        defaultNavigator(context, const NavBarView());
                       }
                     }),
                 const SizedBox(

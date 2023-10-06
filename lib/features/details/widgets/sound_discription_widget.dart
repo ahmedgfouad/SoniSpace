@@ -40,11 +40,12 @@ class SoundDiscriptionWidget extends StatelessWidget {
               const LibraryItemWidget(
                 height: 46,
                 width: 44,
+                index: 0,
               ),
               CustomButton(
                 width: 104.w,
                 height: 31.h,
-                backgroundColor: Colors.transparent,
+                backgroundColor: AppColors.burple,
                 borderRadius: 16.r,
                 title: 'Follow',
                 verticalPadding: 0,

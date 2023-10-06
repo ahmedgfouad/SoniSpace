@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sonispace/features/home/view_model/home_controller.dart';
 import 'package:sonispace/features/library/widgets/library_item_widget.dart';
 
 class ScrollingItemLibraryWidget extends StatelessWidget {
@@ -10,8 +11,10 @@ class ScrollingItemLibraryWidget extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
       separatorBuilder: (context, index) => const SizedBox(height: 16),
-      itemCount: 10,
-      itemBuilder: (context, index) =>  const LibraryItemWidget(),
+      itemCount: HomeController().popularImages.length,
+      itemBuilder: (context, index) => LibraryItemWidget(
+        index: index,
+      ),
     );
   }
 } 

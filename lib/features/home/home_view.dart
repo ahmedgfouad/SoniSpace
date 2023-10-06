@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
-import 'package:sonispace/core/widgets/custom_app_bar_widget.dart';
-import 'package:sonispace/features/home/widgets/botton_type_widget.dart';
+import 'package:sonispace/core/widgets/custom_home_bar.dart';
 import 'package:sonispace/features/home/widgets/scrolleing_home_widget.dart';
+import 'package:sonispace/features/home/widgets/search_home_widget.dart';
 
 class Homeviwe extends StatelessWidget {
   const Homeviwe({super.key});
@@ -33,9 +33,10 @@ class Homeviwe extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
-                      CustomAppBarWidget(tittle: 'Your Space'),
+                      CustomHomeAppBarWidget(tittle: "Hellow, Kareem"),
                       SizedBox(height: 20),
-                      BottonTypeWidget(),
+                      // BottonTypeWidget(),
+                      SearchHomeWidget(),
                       SizedBox(height: 13),
                     ],
                   ),

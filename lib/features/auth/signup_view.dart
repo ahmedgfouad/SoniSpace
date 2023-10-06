@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/auth/login_view.dart';
+import 'package:sonispace/features/auth/view_model/auth_controller.dart';
 import '../../core/utils/app_images.dart';
 import '../../core/widgets/auth_widgets/custom_button.dart';
 import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
@@ -63,18 +65,22 @@ class _SignupViewState extends State<SignupView> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Signup",
-                    style: AppStyles.textStyle36,
+                  const Center(
+                    child: Text(
+                      "Signup",
+                      style: AppStyles.textStyle36,
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "Please enter your Personal information",
-                    style: AppStyles.textStyle16,
+                  const Center(
+                    child: Text(
+                      "Please enter your Personal information",
+                      style: AppStyles.textStyle16,
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -136,6 +142,53 @@ class _SignupViewState extends State<SignupView> {
                   ),
                   const SizedBox(
                     height: 50.0,
+                  ),
+                  const Text("Using state",
+                      style: AppStyles.textStyle18, textAlign: TextAlign.start),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Consumer<AuthController>(
+                    builder: (
+                      BuildContext context,
+                      AuthController provider,
+                      Widget? child,
+                    ) =>
+                        Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomButton(
+                          width: 91.w,
+                          height: 31.h,
+                          titleColor: AppColors.white,
+                          borderRadius: 16.r,
+                          title: 'Health',
+                          verticalPadding: 0,
+                          textStyle: AppStyles.textStyle12,
+                          onPressed: () {
+                            provider.changeHumanStatuesToHelth();
+                          },
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        CustomButton(
+                          width: 91.w,
+                          height: 31.h,
+                          titleColor: AppColors.white,
+                          borderRadius: 16.r,
+                          title: 'Blind',
+                          verticalPadding: 0,
+                          textStyle: AppStyles.textStyle12,
+                          onPressed: () {
+                            provider.changeHumanStatuesToBliend();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   CustomButton(
                       width: MediaQuery.of(context).size.width * 0.88,

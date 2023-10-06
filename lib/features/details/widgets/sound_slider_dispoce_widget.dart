@@ -1,12 +1,15 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/details/view_model/details_controller.dart';
 
 class SoundSliderAndDisposeWidget extends StatelessWidget {
-  SoundSliderAndDisposeWidget({super.key});
-  final player = AudioPlayer();
+  // final String sound;
+  const SoundSliderAndDisposeWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +51,34 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
           children: [
             Image.asset(AppImages.spedIcon),
             Image.asset(AppImages.backTenSecondIcon),
-            CircleAvatar(
-              radius: 30,
-              backgroundColor: AppColors.white,
-              child: IconButton(
-                onPressed: () {
-                final player = AudioPlayer();
-                //player.play('assets/sounds/angelical-pad-143276.mp3');
-              }, icon: const Icon(Icons.pause,
-                  size: 30,),
+            Consumer<DetailsController>(
+              builder: (
+                BuildContext context,
+                DetailsController provider,
+                Widget? child,
+              ) =>
+                  CircleAvatar(
+                radius: 30,
+                backgroundColor: AppColors.white,
+                child: IconButton(
+                  onPressed: () async {
+                    provider.changeStatues();
+                    provider.audioStatues
+                        ? provider.playAudio(
+                            url:
+                                "sounds/interstellar-science-fiction-sounds-8239.mp3")
+                        : provider.stopAudio();
+                  },
+                  icon: provider.audioStatues
+                      ? const Icon(
+                          Icons.pause,
+                          size: 30,
+                        )
+                      : const Icon(
+                          Icons.play_arrow,
+                          size: 30,
+                        ),
+                ),
               ),
             ),
             Image.asset(AppImages.goTenSecondIcon),

@@ -37,7 +37,7 @@ class ExplorView extends StatelessWidget {
                     children: [
                       CustomAppBarWidget(tittle: 'Explore'),
                       SizedBox(height: 10),
-                      SearchExploreWidget(),
+                      SearchExplorWidget(),
                       SizedBox(height: 5),
                       Text("Browse all", style: AppStyles.textStyle14),
                       SizedBox(height: 14),

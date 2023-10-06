@@ -47,7 +47,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                         height: MediaQuery.of(context).size.height * 0.034,
                         colorFilter: ColorFilter.mode(
                           index == provider.currentIndex
-                              ? AppColors.orange
+                              ? AppColors.burple 
                               : AppColors.white,
                           BlendMode.srcATop,
                         ),
