@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
+import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/features/setting/view_model/setting_abb_widget.dart';
+import 'package:sonispace/features/setting/view_model/setting_controller.dart';
+import 'package:sonispace/features/setting/widgets/list_tile_setting_widget.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -21,7 +25,50 @@ class SettingsView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Column(),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Settings",
+                    style: AppStyles.textStyle28,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SettingBarWidget(),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Account",
+                    style: AppStyles.textStyle20,
+                  ),
+                  const SizedBox(height: 7),
+                  SizedBox(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) => ListTileSetingWidget(
+                        title: SettingController().profileInfo["$index"][0],
+                        subtitle: SettingController().profileInfo["$index"][1],
+                      ),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 16),
+                      itemCount: 6,
+                    ),
+                  ),
+                  const ListTile(
+                    title: Text(
+                      "Log out",
+                      style: AppStyles.textStyle20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

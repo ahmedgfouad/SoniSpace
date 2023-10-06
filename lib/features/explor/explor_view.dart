@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
+import 'package:sonispace/core/utils/app_styles.dart';
+import 'package:sonispace/core/widgets/custom_app_bar_widget.dart';
+import 'package:sonispace/features/explor/widgets/explore_search_widget.dart';
+import 'package:sonispace/features/explor/widgets/scrolling_grid_explore_widget.dart';
 
 class ExplorView extends StatelessWidget {
   const ExplorView({super.key});
@@ -21,9 +25,33 @@ class ExplorView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Column(),
+          child: const Padding(
+            padding: EdgeInsets.only(left: 26, top: 15, right: 25),
+            child: CustomScrollView(
+              physics: BouncingScrollPhysics(),
+              shrinkWrap: true,
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomAppBarWidget(tittle: 'Explore'),
+                      SizedBox(height: 10),
+                      SearchExplorWidget(),
+                      SizedBox(height: 5),
+                      Text("Browse all", style: AppStyles.textStyle14),
+                      SizedBox(height: 14),
+                    ],
+                  ),
+                ),
+                SliverFillRemaining(
+                  child: Expanded(child: ScrollingGridExplorWidget()),
+                )
+              ],
+            ),
+          ),
         ),
       ),
-    ); 
+    );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sonispace/core/utils/app_colors.dart';
 
 abstract class AppStyles {
   static const textStyle42 = TextStyle(
@@ -10,8 +12,8 @@ abstract class AppStyles {
     fontSize: 36,
     fontWeight: FontWeight.bold,
   );
-  static const textStyle28 = TextStyle(
-    fontSize: 28,
+  static TextStyle textStyle28 = TextStyle(
+    fontSize: 28.sp,
     fontWeight: FontWeight.bold,
   );
 
@@ -29,12 +31,14 @@ abstract class AppStyles {
     fontWeight: FontWeight.bold,
   );
   static const textStyle16 = TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
-      );
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: AppColors.greytittle,
+  );
   static const textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.bold,
+    color: AppColors.greyDiscription,
   );
 
   static const textStyle12 = TextStyle(

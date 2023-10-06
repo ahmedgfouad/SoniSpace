@@ -4,19 +4,21 @@ import 'package:sonispace/features/explor/explor_view.dart';
 import 'package:sonispace/features/home/home_view.dart';
 import 'package:sonispace/features/library/library_view.dart';
 import 'package:sonispace/features/setting/sittings_view.dart';
+import 'package:sonispace/features/upload_image/upload_image_view.dart';
 
 class NavBarController extends ChangeNotifier {
-    // final drawerContoller = ZoomDrawerController();
+  // final drawerContoller = ZoomDrawerController();
 
   List listOfNavigationBarScreens = const [
     Homeviwe(),
     ExplorView(),
+    UploadImageView(),
     LibraryView(),
     SettingsView()
   ];
   List<String> listOfNavigationBarIcons = [
     AppImages.homeIcon,
-    AppImages.explorIcon,
+    AppImages.exploreIcon,
     AppImages.libraryIcon,
     AppImages.settingIcon,
   ];
@@ -26,17 +28,10 @@ class NavBarController extends ChangeNotifier {
     "Library",
     "Setting",
   ];
+  int currentIndex = 0;
 
-  List listOfAppBarTittle = [
-    "IEEE ManCSC",
-    "Blogs",
-    "Tracks",
-  ];
-
-  int curentIndex = 0;
-
-  updateCurentIndex(int index) {
-    curentIndex = index;
+  updateCurrentIndex(int index) {
+    currentIndex = index;
     notifyListeners();
   }
 }
