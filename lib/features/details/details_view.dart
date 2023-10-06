@@ -25,18 +25,18 @@ class DetailsView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Padding(
-            padding: EdgeInsets.only(left: 24, top: 16, right: 24),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 24, top: 16, right: 24),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  CustomAppBarDetailsWidget(),
-                  SoundTittleAndImageWidget(),
-                  SizedBox(height: 20),
+                  const CustomAppBarDetailsWidget(),
+                  const SoundTittleAndImageWidget(),
+                  const SizedBox(height: 20),
                   SoundSliderAndDisposeWidget(),
-                  SizedBox(height: 40),
-                  SoundDiscriptionWidget(),
+                  const SizedBox(height: 40),
+                  const SoundDiscriptionWidget(),
                 ],
               ),
             ),

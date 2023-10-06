@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sonispace/features/bottom_nav_bar/view_model/nav_bar_controller.dart';
 import 'package:sonispace/features/home/view_model/home_controller.dart';
+import 'package:sonispace/features/home/widgets/custom_container.dart';
 
 import 'features/auth/onboarding_view.dart';
+import 'features/details/details_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'SoniSpace',
           theme: ThemeData.dark(),
-          home: const OnboardingView(),
+          home: const CustomContainer(),
         ),
       ),
     );
