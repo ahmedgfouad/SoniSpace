@@ -16,7 +16,7 @@ class NavBarController extends ChangeNotifier {
   ];
   List<String> listOfNavigationBarIcons = [
     AppImages.homeIcon,
-    AppImages.explorIcon,
+    AppImages.exploreIcon,
     AppImages.libraryIcon,
     AppImages.settingIcon,
   ];
@@ -33,10 +33,10 @@ class NavBarController extends ChangeNotifier {
     "Tracks",
   ];
 
-  int curentIndex = 0;
+  int currentIndex = 0;
 
-  updateCurentIndex(int index) {
-    curentIndex = index;
+  updateCurrentIndex(int index) {
+    currentIndex = index;
     notifyListeners();
   }
 }
