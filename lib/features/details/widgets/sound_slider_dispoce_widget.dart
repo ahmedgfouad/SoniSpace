@@ -1,10 +1,12 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 
 class SoundSliderAndDisposeWidget extends StatelessWidget {
-  const SoundSliderAndDisposeWidget({super.key});
+  SoundSliderAndDisposeWidget({super.key});
+  final player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +48,15 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
           children: [
             Image.asset(AppImages.spedIcon),
             Image.asset(AppImages.backTenSecondIcon),
-            const CircleAvatar(
+            CircleAvatar(
               radius: 30,
               backgroundColor: AppColors.white,
-              child: Icon(
-                Icons.pause,
-                size: 30,
+              child: IconButton(
+                onPressed: () {
+                final player = AudioPlayer();
+                //player.play('assets/sounds/angelical-pad-143276.mp3');
+              }, icon: const Icon(Icons.pause,
+                  size: 30,),
               ),
             ),
             Image.asset(AppImages.goTenSecondIcon),
