@@ -1,5 +1,6 @@
 class AppImages {
-  static const String splashImage = "assets/images/Astronaut-Space-PNG-Pic 1.png";
+  static const String splashImage =
+      "assets/images/Astronaut-Space-PNG-Pic 1.png";
   static const String authBackGroundImage =
       "assets/images/auth_backg_image.webp";
   static const String appBackGroundImage = "assets/images/app_backg_image.jpg";
@@ -8,6 +9,7 @@ class AppImages {
   static const String libraryIcon = "assets/images/Vector_2.svg";
   static const String homeIcon = "assets/images/Vector_3.svg";
   static const String settingIcon = "assets/images/Vector_4.svg";
+  static const String uploadIcon = "assets/images/Vector66.svg";
   static const String backTenSecondIcon = "assets/images/Vector_10.png";
   static const String goTenSecondIcon = "assets/images/Vector_11.png";
   static const String spedIcon = "assets/images/Vector44.png";

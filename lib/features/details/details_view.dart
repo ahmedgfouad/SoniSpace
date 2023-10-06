@@ -11,6 +11,8 @@ class DetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
+
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
