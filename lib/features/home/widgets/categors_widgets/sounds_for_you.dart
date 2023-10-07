@@ -37,7 +37,7 @@ class SoundsForYouWidget extends StatelessWidget {
                     context,
                     DetailsView(
                       image: provider.soundsForYou[index],
-                      sound: DetailsController().listOfAudio[0],
+                      sound:"sounds/space-travel-in-outer-space-158427.mp3",
                     ),
                   );
                 },

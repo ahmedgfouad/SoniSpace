@@ -37,7 +37,7 @@ class DetailsView extends StatelessWidget {
                   SoundTittleAndImageWidget( image: image,
                   ),
                   const SizedBox(height: 20),
-                   const SoundSliderAndDisposeWidget(),
+                    SoundSliderAndDisposeWidget(sound: sound,),
                   const SizedBox(height: 40),
                   const SoundDiscriptionWidget(),
                 ],
