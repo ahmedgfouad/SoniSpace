@@ -6,7 +6,7 @@ class HomeController extends ChangeNotifier {
     "Sounds for you",
     "Most Popular",
     "Most Popular",
-  ]; 
+  ];
   List<String> popularImages = [
     AppImages.popular1,
     AppImages.popular2,
@@ -14,6 +14,12 @@ class HomeController extends ChangeNotifier {
     AppImages.popular4,
     AppImages.popular5,
     AppImages.popular6,
-    
-  ]; 
+  ];
+
+  List<String> soundsForYou = [
+    "assets/images/M51-HAWC.png",
+    "assets/images/ngc253atlas.jpg",
+    "assets/images/ngc7023atlas.jpg",
+    "assets/images/nhq202007180001.jpg",
+  ];
 }
