@@ -67,6 +67,9 @@ class _SignupViewState extends State<SignupView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
                   const Center(
                     child: Text(
                       "Signup",
@@ -193,12 +196,12 @@ class _SignupViewState extends State<SignupView> {
                   CustomButton(
                       width: MediaQuery.of(context).size.width * 0.88,
                       height: 31.h,
-                      backgroundColor: AppColors.white,
+                      backgroundColor: AppColors.burple,
                       borderRadius: 16.r,
                       title: 'Signup',
                       verticalPadding: 0,
                       textStyle: AppStyles.textStyle12
-                          .copyWith(color: AppColors.black),
+                          .copyWith(color: AppColors.white),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           usernameController.text;

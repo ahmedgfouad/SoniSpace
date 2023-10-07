@@ -24,6 +24,8 @@ class AppImages {
   static const String popular2 = 'assets/images/CenA_LIC-LP-final.png';
   static const String popular3 = 'assets/images/Hot_Jupiter_Transits_sm.jpg';
   static const String popular4 = 'assets/images/Rectangle_43.png';
-  static const String popular5 = 'assets/images/ssc2020-10a.jpg';
-  static const String popular6 = 'assets/images/SCI2021_015.png';
+
+
+  static const String sounds1 = 'assets/images/ssc2020-10a.jpg';
+  static const String sound2 = 'assets/images/SCI2021_015.png';
 }

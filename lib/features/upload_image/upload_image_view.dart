@@ -1,11 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/core/widgets/auth_widgets/custom_button.dart';
 
 class UploadImageView extends StatelessWidget {
   const UploadImageView({super.key});
+  static File? file;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +43,14 @@ class UploadImageView extends StatelessWidget {
                 title: 'Upload Image',
                 verticalPadding: 0,
                 textStyle: AppStyles.textStyle12,
-                onPressed: () {},
+                onPressed: () async {
+                  // var imagePicker = ImagePicker();
+                  // var imgPicked =
+                  //     await imagePicker.pickImage(source: ImageSource.gallery);
+                  // if (imgPicked != null) {
+                  //   file = File(imgPicked.path);
+                  // }
+                },
               ),
             ],
           ),

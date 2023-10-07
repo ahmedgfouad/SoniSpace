@@ -7,9 +7,9 @@ import 'package:sonispace/features/details/view_model/details_controller.dart';
 import 'package:sonispace/features/home/view_model/home_controller.dart';
 import 'package:sonispace/features/home/widgets/custom_category_widget.dart';
 
-class CategoryTypeWidget extends StatelessWidget {
+class RecentCategoryWidget extends StatelessWidget {
   final String categoryType;
-  const CategoryTypeWidget({super.key, required this.categoryType});
+  const RecentCategoryWidget({super.key, required this.categoryType});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,13 @@ class CategoryTypeWidget extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 16.w),
-            itemCount: 5,
+            itemCount: HomeController().recentPlayer.length,
             itemBuilder: (context, index) => InkWell(
               onTap: () {
                 defaultNavigator(
                   context,
                   DetailsView(
-                    image: HomeController().popularImages[index],
+                    image: HomeController().recentPlayer[index],
                     sound: DetailsController().listOfAudio[0],
                   ),
                 );
@@ -41,7 +41,7 @@ class CategoryTypeWidget extends StatelessWidget {
               child: CustomContainer(
                 title: "Nipton",
                 description: "Description of the planet",
-                image: HomeController().popularImages[index],
+                image: HomeController().recentPlayer[index],
               ),
             ),
           ),
