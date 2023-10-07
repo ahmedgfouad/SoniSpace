@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/features/details/details_view.dart';
@@ -10,25 +11,28 @@ class ExplorItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        defaultNavigator(
-          context,
-           DetailsView(
-            image: AppImages.exploreImage,
-            sound: DetailsController().listOfAudio[0],
+    return Consumer<DetailsController>(
+      builder: (BuildContext context, DetailsController value, Widget? child) =>
+          GestureDetector(
+        onTap: () {
+          defaultNavigator(
+            context,
+            const DetailsView(
+              image: AppImages.exploreImage,
+              sound: "sounds/angelical-pad-143276.mp3",
+            ),
+          );
+        },
+        child: Container(
+          width: 145.w,
+          height: 109.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
           ),
-        );
-      },
-      child: Container(
-        width: 145.w,
-        height: 109.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Image.asset(
-          AppImages.exploreImage,
-          fit: BoxFit.fill,
+          child: Image.asset(
+            AppImages.exploreImage,
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );

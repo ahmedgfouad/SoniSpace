@@ -41,7 +41,8 @@ class PopularCageoryWidget extends StatelessWidget {
                     context,
                     DetailsView(
                       image: provider.popularImages[index],
-                      sound: DetailsController().listOfAudio[0],
+                      sound:
+                          "sounds/tmosphere-of-a-wild-tropical-planet-136362.mp3",
                     ),
                   );
                 },

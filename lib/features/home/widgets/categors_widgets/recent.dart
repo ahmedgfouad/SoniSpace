@@ -34,7 +34,7 @@ class RecentCategoryWidget extends StatelessWidget {
                   context,
                   DetailsView(
                     image: HomeController().recentPlayer[index],
-                    sound: DetailsController().listOfAudio[0],
+                    sound: "sounds/mixkit-fast-rocket-whoosh-1714.wav",
                   ),
                 );
               },
