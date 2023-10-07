@@ -65,8 +65,7 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
                     provider.changeStatues();
                     provider.audioStatues
                         ? provider.playAudio(
-                            url:
-                                "sounds/interstellar-science-fiction-sounds-8239.mp3")
+                            url: "sounds/angelical-pad-143276.mp3")
                         : provider.stopAudio();
                   },
                   icon: provider.audioStatues
