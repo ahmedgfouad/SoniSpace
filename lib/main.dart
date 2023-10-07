@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'SoniSpace',
           theme: ThemeData.dark(),
-          home: const OnboardingView(),
+          home: const NavBarView(),
         ),
       ),
     );
