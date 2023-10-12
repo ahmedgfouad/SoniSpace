@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/details_view.dart';
-import 'package:sonispace/features/details/view_model/details_controller.dart';
 import 'package:sonispace/features/home/view_model/home_controller.dart';
 import 'package:sonispace/features/home/widgets/custom_category_widget.dart';
 
@@ -48,7 +47,8 @@ class PopularCageoryWidget extends StatelessWidget {
                 },
                 child: CustomContainer(
                   title: "Nipton",
-                  description: "Description of the planet",
+                  description:
+                      "The sound of Earth in space is a fascinating topic. ",
                   image: HomeController().popularImages[index],
                 ),
               ),

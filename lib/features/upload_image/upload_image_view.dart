@@ -8,8 +8,19 @@ import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/core/widgets/auth_widgets/custom_button.dart';
 
 class UploadImageView extends StatelessWidget {
-  const UploadImageView({super.key});
-  static File? file;
+  UploadImageView({super.key});
+  static File? image;
+  final piker = ImagePicker();
+  Future getImage() async {
+    final pickedfile =
+        await piker.pickImage(source: ImageSource.gallery, imageQuality: 80);
+    if (pickedfile != null) {
+      image = File(pickedfile.path);
+    } else {
+      // ignore: avoid_print
+      print("no image");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +55,7 @@ class UploadImageView extends StatelessWidget {
                 verticalPadding: 0,
                 textStyle: AppStyles.textStyle12,
                 onPressed: () async {
+                  getImage();
                   // var imagePicker = ImagePicker();
                   // var imgPicked =
                   //     await imagePicker.pickImage(source: ImageSource.gallery);

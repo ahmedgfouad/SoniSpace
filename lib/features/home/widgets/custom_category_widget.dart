@@ -32,7 +32,7 @@ class CustomContainer extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(image, width: 150, height: 100),
+              Image.asset(image, width: 150, height: 70),
             ],
           ),
           Row(
@@ -54,6 +54,8 @@ class CustomContainer extends StatelessWidget {
           ),
           Text(
             description,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: AppStyles.textStyle10.copyWith(color: AppColors.white),
           ),
           Text(
