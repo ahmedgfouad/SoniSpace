@@ -5,8 +5,6 @@ import 'package:sonispace/core/widgets/custom_home_bar.dart';
 import 'package:sonispace/features/home/widgets/categors_widgets/populsr.dart';
 import 'package:sonispace/features/home/widgets/categors_widgets/recent.dart';
 import 'package:sonispace/features/home/widgets/categors_widgets/sounds_for_you.dart';
-import 'package:sonispace/features/home/widgets/category_widget.dart';
-import 'package:sonispace/features/home/widgets/scrolleing_home_widget.dart';
 import 'package:sonispace/features/home/widgets/search_home_widget.dart';
 
 class Homeviwe extends StatelessWidget {
@@ -15,7 +13,7 @@ class Homeviwe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.backGround,
       body: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -50,7 +48,9 @@ class Homeviwe extends StatelessWidget {
                     child: Column(
                       children: [
                         PopularCageoryWidget(categoryType: "Popular"),
+                        SizedBox(height: 20),
                         SoundsForYouWidget(categoryType: "Sounds for you"),
+                        SizedBox(height: 20),
                         RecentCategoryWidget(categoryType: "Recently played"),
                       ],
                     ),

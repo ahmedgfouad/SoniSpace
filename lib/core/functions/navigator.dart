@@ -6,6 +6,12 @@ void defaultNavigator(context, Widget nextScreen) {
     MaterialPageRoute(builder: (context) => nextScreen),
   );
 }
+void defaultReplacementNavigator(context, Widget nextScreen) {
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => nextScreen),
+  );
+}
 
 String getAsset(String image) => 'assets/images/$image.png'; 
 

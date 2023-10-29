@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
@@ -18,13 +19,13 @@ class SettingsView extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                AppImages.appBackGroundImage,
+              // image: DecorationImage(
+              //   image: AssetImage(
+              //     AppImages.appBackGroundImage,
+              //   ),
+              //   fit: BoxFit.cover,
+              // ),
               ),
-              fit: BoxFit.cover,
-            ),
-          ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
@@ -32,9 +33,9 @@ class SettingsView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Settings",
-                    style: AppStyles.textStyle28,
+                    style: AppStyles.textStyle24,
                   ),
                   const SizedBox(
                     height: 10,
@@ -45,18 +46,22 @@ class SettingsView extends StatelessWidget {
                     "Account",
                     style: AppStyles.textStyle20,
                   ),
-                  const SizedBox(height: 7),
+                  // const SizedBox(height: 7),
                   SizedBox(
                     child: ListView.separated(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) => ListTileSetingWidget(
-                        title: SettingController().profileInfo["$index"][0],
-                        subtitle: SettingController().profileInfo["$index"][1],
-                      ),
                       separatorBuilder: (context, index) =>
-                          const SizedBox(height: 16),
+                          const SizedBox(height: 0),
                       itemCount: 6,
+                      itemBuilder: (context, index) => SizedBox(
+                        height: 60.h,
+                        child: ListTileSetingWidget(
+                          title: SettingController().profileInfo["$index"][0],
+                          subtitle: SettingController().profileInfo["$index"]
+                              [1],
+                        ),
+                      ),
                     ),
                   ),
                   const ListTile(

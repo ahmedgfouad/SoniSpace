@@ -6,9 +6,9 @@ import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/view_model/details_controller.dart';
 
 class SoundSliderAndDisposeWidget extends StatelessWidget {
-  // final String sound;
+  final String sound;
   const SoundSliderAndDisposeWidget({
-    super.key,
+    super.key, required this.sound,
   });
 
   @override
@@ -65,7 +65,8 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
                     provider.changeStatues();
                     provider.audioStatues
                         ? provider.playAudio(
-                            url: "sounds/angelical-pad-143276.mp3")
+                            url: sound,
+                            )
                         : provider.stopAudio();
                   },
                   icon: provider.audioStatues

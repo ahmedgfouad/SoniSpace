@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/details_view.dart';
-import 'package:sonispace/features/details/view_model/details_controller.dart';
 import 'package:sonispace/features/home/view_model/home_controller.dart';
 import 'package:sonispace/features/home/widgets/custom_category_widget.dart';
 
@@ -21,11 +20,11 @@ class SoundsForYouWidget extends StatelessWidget {
         children: [
           Text(
             categoryType,
-            style: AppStyles.textStyle28,
+            style: AppStyles.textStyle20,
           ),
           const SizedBox(height: 7),
           SizedBox(
-            height: 150.h,
+            height: MediaQuery.of(context).size.height / 3,
             child: ListView.separated(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -37,7 +36,7 @@ class SoundsForYouWidget extends StatelessWidget {
                     context,
                     DetailsView(
                       image: provider.soundsForYou[index],
-                      sound: DetailsController().listOfAudio[0],
+                      sound: "sounds/space-travel-in-outer-space-158427.mp3",
                     ),
                   );
                 },
