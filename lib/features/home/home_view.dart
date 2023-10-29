@@ -13,7 +13,7 @@ class Homeviwe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.backGround,
       body: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -48,7 +48,9 @@ class Homeviwe extends StatelessWidget {
                     child: Column(
                       children: [
                         PopularCageoryWidget(categoryType: "Popular"),
+                        SizedBox(height: 20),
                         SoundsForYouWidget(categoryType: "Sounds for you"),
+                        SizedBox(height: 20),
                         RecentCategoryWidget(categoryType: "Recently played"),
                       ],
                     ),

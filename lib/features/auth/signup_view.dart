@@ -53,9 +53,10 @@ class _SignupViewState extends State<SignupView> {
             color: Colors.transparent,
             image: DecorationImage(
               image: AssetImage(
-                AppImages.authBackGroundImage,
+                AppImages.background,
               ),
               fit: BoxFit.fitHeight,
+              opacity: .5,
             ),
           ),
           child: SingleChildScrollView(
@@ -225,11 +226,12 @@ class _SignupViewState extends State<SignupView> {
                       ),
                       InkWell(
                         onTap: () {
-                          defaultNavigator(context, const LoginView());
+                          defaultReplacementNavigator(context, const LoginView());
                         },
-                        child: const Text(
+                        child: Text(
                           "Login",
-                          style: AppStyles.textStyle16,
+                          style: AppStyles.textStyle16
+                              .copyWith(color: AppColors.burple),
                         ),
                       ),
                     ],

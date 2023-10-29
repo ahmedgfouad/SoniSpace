@@ -20,11 +20,11 @@ class SoundsForYouWidget extends StatelessWidget {
         children: [
           Text(
             categoryType,
-            style: AppStyles.textStyle28,
+            style: AppStyles.textStyle20,
           ),
           const SizedBox(height: 7),
           SizedBox(
-            height: 150.h,
+            height: MediaQuery.of(context).size.height / 3,
             child: ListView.separated(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -36,7 +36,7 @@ class SoundsForYouWidget extends StatelessWidget {
                     context,
                     DetailsView(
                       image: provider.soundsForYou[index],
-                      sound:"sounds/space-travel-in-outer-space-158427.mp3",
+                      sound: "sounds/space-travel-in-outer-space-158427.mp3",
                     ),
                   );
                 },

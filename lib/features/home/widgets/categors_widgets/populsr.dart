@@ -24,11 +24,11 @@ class PopularCageoryWidget extends StatelessWidget {
         children: [
           Text(
             categoryType,
-            style: AppStyles.textStyle28,
+            style: AppStyles.textStyle20,
           ),
           const SizedBox(height: 7),
           SizedBox(
-            height: 150.h,
+            height: MediaQuery.of(context).size.height / 3,
             child: ListView.separated(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
