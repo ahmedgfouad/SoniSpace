@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AuthController extends ChangeNotifier {
-  bool isBliend = true;
+  bool isBliend = true; 
 
-  void changeHumanStatuesToBliend() {
-    isBliend = true;
-    notifyListeners();
-  }
-  void changeHumanStatuesToHelth() {
-    isBliend = false;
+  void changeHumanStatue() {
+    isBliend = !isBliend;
     notifyListeners();
   }
 }

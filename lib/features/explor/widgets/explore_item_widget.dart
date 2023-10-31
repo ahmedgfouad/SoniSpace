@@ -5,9 +5,11 @@ import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/features/details/details_view.dart';
 import 'package:sonispace/features/details/view_model/details_controller.dart';
+import 'package:sonispace/features/explor/view_model/explore_controller.dart';
 
 class ExplorItemWidget extends StatelessWidget {
-  const ExplorItemWidget({super.key});
+  final int index;
+  const ExplorItemWidget({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +17,8 @@ class ExplorItemWidget extends StatelessWidget {
       builder: (BuildContext context, DetailsController value, Widget? child) =>
           GestureDetector(
         onTap: () {
-          defaultNavigator(
-            context,
-            const DetailsView(
+          DefaultNavigationWidget(
+            page: const DetailsView(
               image: AppImages.exploreImage,
               sound: "sounds/angelical-pad-143276.mp3",
             ),
@@ -30,7 +31,7 @@ class ExplorItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: Image.asset(
-            AppImages.exploreImage,
+            ExploreController().exploreImages[index],
             fit: BoxFit.fill,
           ),
         ),
