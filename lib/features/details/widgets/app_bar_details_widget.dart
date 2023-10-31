@@ -9,12 +9,12 @@ class CustomAppBarDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        GestureDetector(
-          onTap: () {
+      children: [ 
+        IconButton(
+          onPressed: () {
             Navigator.pop(context);
           },
-          child: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
         ),
         Text(
           "Rounding of the earth’s sound",

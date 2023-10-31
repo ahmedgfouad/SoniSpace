@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
-import 'package:sonispace/ex.dart';
-import 'package:sonispace/features/auth/onboarding_view.dart';
-import 'package:sonispace/features/auth/signup_view.dart';
 import 'package:sonispace/features/auth/view_model/auth_controller.dart';
 import 'package:sonispace/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import 'package:sonispace/features/bottom_nav_bar/view_model/nav_bar_controller.dart';
@@ -30,11 +28,11 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (context) => DetailsController()),
           ChangeNotifierProvider(create: (context) => AuthController()),
         ],
-        builder: (context, child) => MaterialApp(
+        builder: (context, child) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'SoniSpace',
           theme: ThemeData.dark(),
-          home: const OnboardingView(),
+          home: const NavBarView(),
         ),
       ),
     );

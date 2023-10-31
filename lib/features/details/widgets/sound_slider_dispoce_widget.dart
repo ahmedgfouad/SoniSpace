@@ -1,15 +1,55 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_images.dart';
-import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/view_model/details_controller.dart';
 
-class SoundSliderAndDisposeWidget extends StatelessWidget {
+class SoundSliderAndDisposeWidget extends StatefulWidget {
   final String sound;
   const SoundSliderAndDisposeWidget({
-    super.key, required this.sound,
+    super.key,
+    required this.sound,
   });
+
+  @override
+  State<SoundSliderAndDisposeWidget> createState() =>
+      _SoundSliderAndDisposeWidgetState();
+}
+
+class _SoundSliderAndDisposeWidgetState
+    extends State<SoundSliderAndDisposeWidget> {
+  final player = AudioPlayer();
+  bool isPlaying = false;
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
+
+  String formatTime(int seconds) {
+    return '${(Duration(seconds: seconds))}'.split('.')[0].padLeft(8, '0');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    player.onPlayerStateChanged.listen((state) {
+      setState(() {
+        isPlaying = state == PlayerState.playing;
+      });
+    });
+
+    player.onDurationChanged.listen((newDuration) {
+      setState(() {
+        duration = newDuration;
+      });
+    });
+
+    player.onPositionChanged.listen((newPosition) {
+      setState(() {
+        position = newPosition;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,28 +61,24 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
           ),
           child: Slider(
             min: 0,
-            max: 100,
-            value: 20,
+            max: duration.inSeconds.toDouble(),
+            value: position.inSeconds.toDouble(),
+            onChanged: (value) {
+              final position = Duration(seconds: value.toInt());
+              player.seek(position);
+              player.resume();
+            },
             thumbColor: AppColors.white,
-            activeColor: AppColors.white,
+            activeColor: AppColors.burple,
             inactiveColor: AppColors.greySlider,
-            divisions: 100,
-            secondaryTrackValue: 5,
-            onChanged: (value) {},
           ),
         ),
         const SizedBox(height: 8),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "0:20",
-              style: AppStyles.textStyle16,
-            ),
-            Text(
-              "0:50",
-              style: AppStyles.textStyle16,
-            ),
+            Text(formatTime(position.inSeconds)),
+            Text(formatTime((duration - position).inSeconds)),
           ],
         ),
         const SizedBox(height: 16),
@@ -58,26 +94,19 @@ class SoundSliderAndDisposeWidget extends StatelessWidget {
                 Widget? child,
               ) =>
                   CircleAvatar(
-                radius: 30,
                 backgroundColor: AppColors.white,
+                radius: 25,
                 child: IconButton(
-                  onPressed: () async {
-                    provider.changeStatues();
-                    provider.audioStatues
-                        ? provider.playAudio(
-                            url: sound,
-                            )
-                        : provider.stopAudio();
+                  icon: Icon(
+                    isPlaying ? Icons.pause : Icons.play_arrow,
+                  ),
+                  onPressed: () {
+                    if (isPlaying) {
+                      player.pause();
+                    } else {
+                      player.play(AssetSource(widget.sound));
+                    }
                   },
-                  icon: provider.audioStatues
-                      ? const Icon(
-                          Icons.pause,
-                          size: 30,
-                        )
-                      : const Icon(
-                          Icons.play_arrow,
-                          size: 30,
-                        ),
                 ),
               ),
             ),

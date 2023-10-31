@@ -35,7 +35,7 @@ class ExplorView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomAppBarWidget(tittle: 'Explore'),
+                      CustomAppBarWidget(tittle: 'Explore', index: 0,startAnimation: true),
                       SizedBox(height: 10),
                       SearchExplorWidget(),
                       SizedBox(height: 5),
