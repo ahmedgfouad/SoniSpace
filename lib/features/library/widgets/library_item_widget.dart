@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sonispace/core/functions/navigator.dart';
+import 'package:get/get.dart';
+
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/details/details_view.dart';
@@ -19,12 +20,15 @@ class LibraryItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        defaultNavigator(
-            context,
-            DetailsView(
-              image: HomeController().popularImages[index],
-              sound: DetailsController().listOfAudio[0],
-            ));
+        Get.to(
+          () => DetailsView(
+            image: HomeController().popularImages[index],
+            sound: DetailsController().listOfAudio[0],
+          ),
+          transition: Transition.fadeIn,
+          duration: const Duration(seconds: 1),
+          // curve: Curves.easeInQuart,
+        );
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

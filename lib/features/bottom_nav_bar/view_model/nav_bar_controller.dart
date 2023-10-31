@@ -9,7 +9,7 @@ import 'package:sonispace/features/upload_image/upload_image_view.dart';
 class NavBarController extends ChangeNotifier {
   // final drawerContoller = ZoomDrawerController();
 
-  List listOfNavigationBarScreens =  [
+  List listOfNavigationBarScreens = [
     const Homeviwe(),
     const ExplorView(),
     UploadImageView(),
