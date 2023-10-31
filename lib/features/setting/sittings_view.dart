@@ -15,17 +15,9 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage(
-              //     AppImages.appBackGroundImage,
-              //   ),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
+          width: MediaQuery.of(context).size.width, 
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
@@ -36,9 +28,7 @@ class SettingsView extends StatelessWidget {
                   children: AnimationConfiguration.toStaggeredList(
                     duration: const Duration(seconds: 1),
                     childAnimationBuilder: (_) => SlideAnimation(
-                      child: FadeInAnimation(
-                        child: _,
-                      ),
+                      child: FadeInAnimation(child: _),
                     ),
                     children: [
                       const Text(

@@ -51,7 +51,7 @@ class OnboardingView extends StatelessWidget {
                 verticalPadding: 0,
                 textStyle: AppStyles.textStyle16,
                 onPressed: () {
-                  defaultNavigator(context, const SignupView());
+                  defaultReplacementNavigator(context, const SignupView()); 
                 },
               ),
               const SizedBox(
