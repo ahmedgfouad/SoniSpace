@@ -45,9 +45,10 @@ class _LoginViewState extends State<LoginView> {
               color: Colors.transparent,
               image: DecorationImage(
                 image: AssetImage(
-                  AppImages.authBackGroundImage,
+                  AppImages.background,
                 ),
                 fit: BoxFit.fitHeight,
+                opacity: .5,
               )),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -125,7 +126,10 @@ class _LoginViewState extends State<LoginView> {
                         emailController.text;
                         passwordController.text;
                         FocusScope.of(context).unfocus();
-                        defaultNavigator(context, const NavBarView());
+                        defaultReplacementNavigator(
+                          context,
+                          const NavBarView(),
+                        );
                       }
                     }),
                 const SizedBox(
@@ -141,11 +145,13 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     InkWell(
                       onTap: () {
-                        defaultNavigator(context, const SignupView());
+                        defaultReplacementNavigator(
+                            context, const SignupView());
                       },
-                      child: const Text(
+                      child: Text(
                         "Create One",
-                        style: AppStyles.textStyle16,
+                        style: AppStyles.textStyle16
+                            .copyWith(color: AppColors.burple),
                       ),
                     ),
                   ],

@@ -18,8 +18,7 @@ class SettingBarWidget extends StatelessWidget {
           backgroundColor: Colors.grey,
           child: Text(
             "N",
-            style: AppStyles.textStyle28
-                .copyWith(color: Colors.black),
+            style: AppStyles.textStyle28.copyWith(color: Colors.black),
           ),
         ),
         const SizedBox(

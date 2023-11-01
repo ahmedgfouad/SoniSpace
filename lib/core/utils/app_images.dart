@@ -1,7 +1,7 @@
 class AppImages {
   static const String splashImage =
       "assets/images/Astronaut-Space-PNG-Pic 1.png";
-  static const String authBackGroundImage =
+  static const String authBackGroundImage = 
       "assets/images/auth_backg_image.webp";
   static const String appBackGroundImage = "assets/images/app_backg_image.jpg";
 
@@ -28,4 +28,6 @@ class AppImages {
 
   static const String sounds1 = 'assets/images/ssc2020-10a.jpg';
   static const String sound2 = 'assets/images/SCI2021_015.png';
+
+  static const String background = 'assets/images/background.jpg';
 }

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
-import 'package:sonispace/core/widgets/auth_widgets/custom_button.dart';
 import 'package:sonispace/features/library/widgets/library_item_widget.dart';
 
 class SoundDiscriptionWidget extends StatelessWidget {

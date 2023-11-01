@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 
 class ListTileSetingWidget extends StatelessWidget {
@@ -12,11 +13,11 @@ class ListTileSetingWidget extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: AppStyles.textStyle18,
+        style: AppStyles.textStyle16.copyWith(color: AppColors.white),
       ),
       subtitle: Text(
         subtitle,
-        style: AppStyles.textStyle16,
+        style: AppStyles.textStyle12,
       ),
     );
   }

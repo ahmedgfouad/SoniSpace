@@ -17,59 +17,47 @@ class OnboardingView extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          color: AppColors.black,
+            color: AppColors.black,
             image: DecorationImage(
-          image: AssetImage(
-            AppImages.splashImage,
-          ),
-          fit: BoxFit.fitHeight,
-        )),
+              image: AssetImage(
+                AppImages.background,
+              ),
+              fit: BoxFit.fitHeight,
+            )),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                ),
-                const Text(
-                  "SONISPACE",
-                  style: AppStyles.textStyle36,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                ),
-                const Text(
-                  "Explore the Universe! ",
-                  style: AppStyles.textStyle36,
-                ),
-                const Text(
-                  "      SoniSpace makes you explore universe sounds and live with these magical sounds",
-                  style: AppStyles.textStyle20,
-                  textAlign: TextAlign.start,
-                ),
-                const SizedBox(
-                  height: 30.0,
-                ),
-                CustomButton(
-                  width: 160.w,
-                  height: 38.h,
-                  backgroundColor: Colors.transparent,
-                  borderRadius: 16.r,
-                  title: 'Explore',
-                  verticalPadding: 0,
-                  textStyle: AppStyles.textStyle16,
-                  onPressed: () {
-                    defaultNavigator(context, const SignupView());
-                  },
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 40),
+              Text(
+                "Explore The Universe with SoniSpace! ",
+                style: AppStyles.textStyle28.copyWith(fontSize: 44.sp),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              const Text(
+                "explore universe  and live with magical sounds",
+                style: AppStyles.textStyle14,
+                textAlign: TextAlign.start,
+              ),
+              const Spacer(),
+              CustomButton(
+                width: 160.w,
+                height: 38.h,
+                backgroundColor: Colors.transparent,
+                borderRadius: 16.r,
+                title: 'Explore',
+                verticalPadding: 0,
+                textStyle: AppStyles.textStyle16,
+                onPressed: () {
+                  defaultReplacementNavigator(context, const SignupView()); 
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+            ],
           ),
         ),
       ),

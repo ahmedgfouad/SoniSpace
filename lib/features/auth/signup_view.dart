@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:sonispace/core/functions/navigator.dart';
 import 'package:sonispace/core/utils/app_colors.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
-import 'package:sonispace/features/auth/login_view.dart';
-import 'package:sonispace/features/auth/view_model/auth_controller.dart';
+import 'package:sonispace/features/auth/login_view.dart'; 
+import 'package:sonispace/features/auth/widgets/user_state_widget.dart';
+import 'package:sonispace/features/bottom_nav_bar/bottom_nav_bar_view.dart';
 import '../../core/utils/app_images.dart';
 import '../../core/widgets/auth_widgets/custom_button.dart';
 import '../../core/widgets/auth_widgets/custom_text_form_field.dart';
@@ -53,9 +53,10 @@ class _SignupViewState extends State<SignupView> {
             color: Colors.transparent,
             image: DecorationImage(
               image: AssetImage(
-                AppImages.authBackGroundImage,
+                AppImages.background,
               ),
               fit: BoxFit.fitHeight,
+              opacity: .5,
             ),
           ),
           child: SingleChildScrollView(
@@ -151,45 +152,7 @@ class _SignupViewState extends State<SignupView> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Consumer<AuthController>(
-                    builder: (
-                      BuildContext context,
-                      AuthController provider,
-                      Widget? child,
-                    ) =>
-                        Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomButton(
-                          width: 91.w,
-                          height: 31.h,
-                          titleColor: AppColors.white,
-                          borderRadius: 16.r,
-                          title: 'Health',
-                          verticalPadding: 0,
-                          textStyle: AppStyles.textStyle12,
-                          onPressed: () {
-                            provider.changeHumanStatuesToHelth();
-                          },
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        CustomButton(
-                          width: 91.w,
-                          height: 31.h,
-                          titleColor: AppColors.white,
-                          borderRadius: 16.r,
-                          title: 'Blind',
-                          verticalPadding: 0,
-                          textStyle: AppStyles.textStyle12,
-                          onPressed: () {
-                            provider.changeHumanStatuesToBliend();
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
+                  const UserStateInAuthWidget(),
                   const SizedBox(
                     height: 20,
                   ),
@@ -210,6 +173,10 @@ class _SignupViewState extends State<SignupView> {
                           confirmPasswordController.text;
                           // To dismiss keyboard
                           FocusScope.of(context).unfocus();
+                          defaultReplacementNavigator(
+                            context,
+                            const NavBarView(),
+                          );
                         }
                       }),
                   const SizedBox(
@@ -225,11 +192,13 @@ class _SignupViewState extends State<SignupView> {
                       ),
                       InkWell(
                         onTap: () {
-                          defaultNavigator(context, const LoginView());
+                          defaultReplacementNavigator(
+                              context, const LoginView());
                         },
-                        child: const Text(
+                        child: Text(
                           "Login",
-                          style: AppStyles.textStyle16,
+                          style: AppStyles.textStyle16
+                              .copyWith(color: AppColors.burple),
                         ),
                       ),
                     ],
