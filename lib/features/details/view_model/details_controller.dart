@@ -2,24 +2,11 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class DetailsController extends ChangeNotifier {
-  bool audioStatues = false;
+  static final player = AudioPlayer();
+  static Duration duration = Duration.zero;
+  // static Duration position = Duration.zero;
 
-  final player = AudioPlayer();
-
-  Future<void> playAudio({required String url}) async {
-    await player.play(AssetSource(url));
-    notifyListeners();
-  }
-
-  void stopAudio() {
-    player.stop();
-    notifyListeners();
-  }
-
-  void changeStatues() {
-    audioStatues = !audioStatues;
-    notifyListeners();
-  }
+  static bool isPlaying = false; 
 
   List<String> listOfAudio = [
     "sounds/angelical-pad-143276.mp3",
@@ -29,4 +16,27 @@ class DetailsController extends ChangeNotifier {
     "sounds/space-travel-in-outer-space-158427.mp3",
     "sounds/tmosphere-of-a-wild-tropical-planet-136362.mp3",
   ];
+
+  static String formatTime(int seconds) {
+    return '${(Duration(seconds: seconds))}'.split('.')[0].padLeft(8, '0');
+  }
+
+  static void changPlayerState() {
+    player.onPlayerStateChanged.listen((state) {
+      isPlaying = state == PlayerState.playing;
+    });
+  }
+
+  static void changeDuration() {
+    player.onDurationChanged.listen((newDuration) {
+      duration = newDuration;
+    });
+  }
+
+  // void changePosition() {
+  //   player.onPositionChanged.listen((newPosition) {
+  //     position = newPosition;
+  //     notifyListeners();
+  //   });
+  // }
 }

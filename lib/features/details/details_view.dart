@@ -15,17 +15,9 @@ class DetailsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage(
-              //     AppImages.appBackGroundImage,
-              //   ),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
           child: Padding(
             padding: const EdgeInsets.only(left: 24, top: 16, right: 24),
             child: SingleChildScrollView(
@@ -33,9 +25,7 @@ class DetailsView extends StatelessWidget {
               child: Column(
                 children: [
                   const CustomAppBarDetailsWidget(),
-                  SoundTittleAndImageWidget(
-                    image: image,
-                  ),
+                  SoundTittleAndImageWidget(image: image),
                   const SizedBox(height: 20),
                   SoundSliderAndDisposeWidget(
                     sound: sound,

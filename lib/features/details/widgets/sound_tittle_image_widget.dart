@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 
 class SoundTittleAndImageWidget extends StatelessWidget {
-  final String image; 
+  final String image;
   const SoundTittleAndImageWidget({super.key, required this.image});
 
   @override
@@ -16,13 +16,13 @@ class SoundTittleAndImageWidget extends StatelessWidget {
           textAlign: TextAlign.center,
           style: AppStyles.textStyle16,
         ),
-        const SizedBox(height: 14), 
+        const SizedBox(height: 14),
         Container(
           width: 300.w,
           height: 250.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image:  DecorationImage(
+            image: DecorationImage(
               image: AssetImage(
                 image,
               ),

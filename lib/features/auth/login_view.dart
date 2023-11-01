@@ -126,7 +126,10 @@ class _LoginViewState extends State<LoginView> {
                         emailController.text;
                         passwordController.text;
                         FocusScope.of(context).unfocus();
-                        DefaultNavigationWidget(page: const NavBarView());
+                        defaultReplacementNavigator(
+                          context,
+                          const NavBarView(),
+                        );
                       }
                     }),
                 const SizedBox(

@@ -36,9 +36,7 @@ class UserStateInAuthWidget extends StatelessWidget {
               provider.changeHumanStatue();
             },
           ),
-          const SizedBox(
-            width: 15,
-          ),
+          const SizedBox(width: 15),
           CustomButton(
             width: 91.w,
             height: 31.h,
