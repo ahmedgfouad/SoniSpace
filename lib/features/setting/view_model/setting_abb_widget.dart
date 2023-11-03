@@ -17,7 +17,7 @@ class SettingBarWidget extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.grey,
           child: Text(
-            "N",
+            "A",
             style: AppStyles.textStyle28.copyWith(color: Colors.black),
           ),
         ),
@@ -29,7 +29,7 @@ class SettingBarWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Nasa",
+              "Ahmed",
               style: AppStyles.textStyle20,
             ),
             Text(

@@ -22,8 +22,6 @@ class SearchHomeWidget extends StatelessWidget {
       child: CustomTextFormField(
         hint: "Explore",
         controller: searchController,
-        suffixIcon: Icons.search,
-        prefixIcon: Icons.search,
         validator: (val) {
           return null;
         },

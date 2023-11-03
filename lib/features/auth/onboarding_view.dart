@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sonispace/core/functions/decoration.dart';
 import 'package:sonispace/core/functions/navigator.dart';
-import 'package:sonispace/core/utils/app_colors.dart';
-import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/core/utils/app_styles.dart';
 import 'package:sonispace/features/auth/signup_view.dart';
-
 import '../../core/widgets/auth_widgets/custom_button.dart';
 
 class OnboardingView extends StatelessWidget {
@@ -16,14 +14,7 @@ class OnboardingView extends StatelessWidget {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-            color: AppColors.black,
-            image: DecorationImage(
-              image: AssetImage(
-                AppImages.background,
-              ),
-              fit: BoxFit.fitHeight,
-            )),
+        decoration: boxDecoration(),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -51,7 +42,7 @@ class OnboardingView extends StatelessWidget {
                 verticalPadding: 0,
                 textStyle: AppStyles.textStyle16,
                 onPressed: () {
-                  defaultReplacementNavigator(context, const SignupView()); 
+                  defaultReplacementNavigator(context, SignupView());
                 },
               ),
               const SizedBox(
