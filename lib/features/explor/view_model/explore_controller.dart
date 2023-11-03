@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:sonispace/core/utils/app_images.dart';
 
-class ExploreController extends ChangeNotifier {
+class ExploreController {
   List<String> exploreImages = [
     AppImages.popular1,
     AppImages.popular2,

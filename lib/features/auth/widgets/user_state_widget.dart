@@ -19,37 +19,48 @@ class UserStateInAuthWidget extends StatelessWidget {
         AuthController provider,
         Widget? child,
       ) =>
-          Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+          Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomButton(
-            width: 91.w,
-            height: 31.h,
-            backgroundColor:
-                provider.isBliend ? Colors.transparent : AppColors.burple,
-            titleColor: AppColors.white,
-            borderRadius: 16.r,
-            title: 'Health',
-            verticalPadding: 0,
-            textStyle: AppStyles.textStyle12,
-            onPressed: () {
-              provider.changeHumanStatue();
-            },
+          const Text(
+            "Using state",
+            style: AppStyles.textStyle18,
+            textAlign: TextAlign.start,
           ),
-          const SizedBox(width: 15),
-          CustomButton(
-            width: 91.w,
-            height: 31.h,
-            titleColor: AppColors.white,
-            backgroundColor:
-                provider.isBliend ? AppColors.burple : Colors.transparent,
-            borderRadius: 16.r,
-            title: 'Blind',
-            verticalPadding: 0,
-            textStyle: AppStyles.textStyle12,
-            onPressed: () {
-              provider.changeHumanStatue();
-            },
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomButton(
+                width: 91.w,
+                height: 31.h,
+                backgroundColor:
+                    provider.isBliend ? Colors.transparent : AppColors.burple,
+                titleColor: AppColors.white,
+                borderRadius: 16.r,
+                title: 'Health',
+                verticalPadding: 0,
+                textStyle: AppStyles.textStyle12,
+                onPressed: () {
+                  provider.changeHumanStatue();
+                },
+              ),
+              const SizedBox(width: 15),
+              CustomButton(
+                width: 91.w,
+                height: 31.h,
+                titleColor: AppColors.white,
+                backgroundColor:
+                    provider.isBliend ? AppColors.burple : Colors.transparent,
+                borderRadius: 16.r,
+                title: 'Blind',
+                verticalPadding: 0,
+                textStyle: AppStyles.textStyle12,
+                onPressed: () {
+                  provider.changeHumanStatue();
+                },
+              ),
+            ],
           ),
         ],
       ),

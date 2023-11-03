@@ -8,7 +8,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final TextInputType keyboardType;
   final IconData prefixIcon;
-  final IconData suffixIcon;
+  final Icon? suffixIcon;
   final bool isPassword;
   final bool showPrefixIcon;
   final bool showSuffixIcon;
@@ -34,7 +34,7 @@ class CustomTextFormField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.maxLength,
     this.prefixIcon = Icons.person,
-    this.suffixIcon = Icons.person,
+    this.suffixIcon,
     this.onTapPrefixIcon,
     this.onTapSuffixIcon,
     this.borderRadius = 30,
@@ -63,6 +63,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       autovalidateMode: AutovalidateMode.disabled,
       validator: widget.validator,
       decoration: InputDecoration(
+        suffixIcon: widget.suffixIcon,
         fillColor: Colors.transparent,
         focusColor: AppColors.white,
         iconColor: AppColors.white,
@@ -97,33 +98,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 color: AppColors.white,
               )
             : null,
-        //suffixIcon: getSuffixIcon(),
       ),
       onChanged: widget.onChanged,
       onFieldSubmitted: widget.onSubmitted,
     );
   }
-
-// Widget? getSuffixIcon() {
-//   if (widget.showSuffixIcon) {
-//     if (!widget.isPassword) {
-//       return Icon(
-//         widget.suffixIcon,
-//         size: 22,
-//         color: Colors.lightBlue,
-//       );
-//     }
-//     return InkWell(
-//       onTap: (() {
-//         setState(() {
-//           showPassword = !showPassword;
-//         });
-//       }),
-//       child: !showPassword
-//           ? const Icon(Icons.visibility)
-//           : const Icon(Icons.visibility_off),
-//     );
-//   }
-//   return null;
 }
-// }

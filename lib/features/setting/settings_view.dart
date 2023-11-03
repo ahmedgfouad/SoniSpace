@@ -17,7 +17,7 @@ class SettingsView extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width, 
+          width: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
@@ -31,20 +31,14 @@ class SettingsView extends StatelessWidget {
                       child: FadeInAnimation(child: _),
                     ),
                     children: [
-                      const Text(
-                        "Settings",
-                        style: AppStyles.textStyle24,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      const Text("Settings", style: AppStyles.textStyle24),
+                      const SizedBox(height: 10),
                       const SettingBarWidget(),
                       const SizedBox(height: 10),
                       const Text(
                         "Account",
                         style: AppStyles.textStyle20,
                       ),
-                      // const SizedBox(height: 7),
                       SizedBox(
                         child: ListView.separated(
                           shrinkWrap: true,

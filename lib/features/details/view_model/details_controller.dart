@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class DetailsController extends ChangeNotifier {
   static final player = AudioPlayer();
   static Duration duration = Duration.zero;
-  // static Duration position = Duration.zero;
 
   static bool isPlaying = false; 
 
@@ -31,12 +30,5 @@ class DetailsController extends ChangeNotifier {
     player.onDurationChanged.listen((newDuration) {
       duration = newDuration;
     });
-  }
-
-  // void changePosition() {
-  //   player.onPositionChanged.listen((newPosition) {
-  //     position = newPosition;
-  //     notifyListeners();
-  //   });
-  // }
+  } 
 }

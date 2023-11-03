@@ -32,17 +32,9 @@ class _HomeviweState extends State<Homeviwe> {
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              // image: DecorationImage(
-              //   image: AssetImage(
-              //     AppImages.appBackGroundImage,
-              //   ),
-              //   fit: BoxFit.cover,
-              // ),
-              ),
           child: Padding(
             padding: const EdgeInsets.only(left: 26, top: 15),
             child: SingleChildScrollView(
@@ -50,7 +42,7 @@ class _HomeviweState extends State<Homeviwe> {
               child: Column(
                 children: [
                   CustomHomeAppBarWidget(
-                    tittle: "Hellow, Kareem",
+                    tittle: "Hellow, Ahmed",
                     index: 0,
                     startAnimation: startAnimation,
                   ),

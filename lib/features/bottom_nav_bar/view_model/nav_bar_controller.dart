@@ -3,11 +3,10 @@ import 'package:sonispace/core/utils/app_images.dart';
 import 'package:sonispace/features/explor/explor_view.dart';
 import 'package:sonispace/features/home/home_view.dart';
 import 'package:sonispace/features/library/library_view.dart';
-import 'package:sonispace/features/setting/sittings_view.dart';
+import 'package:sonispace/features/setting/settings_view.dart';
 import 'package:sonispace/features/upload_image/upload_image_view.dart';
 
 class NavBarController extends ChangeNotifier {
-  // final drawerContoller = ZoomDrawerController();
 
   List listOfNavigationBarScreens = [
     const Homeviwe(),

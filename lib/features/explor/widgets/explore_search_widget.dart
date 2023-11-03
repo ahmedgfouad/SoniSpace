@@ -11,7 +11,7 @@ class SearchExplorWidget extends StatelessWidget {
     return CustomTextFormField(
       hint: "What do imagine into space?",
       controller: searchController,
-      suffixIcon: Icons.search,
+      suffixIcon: const Icon(Icons.search),
       prefixIcon: Icons.search,
       validator: (val) {
         return null;
