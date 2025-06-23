@@ -44,14 +44,21 @@ A collaborative project developed as part of the [NASA International Space Apps 
 ## 👁️ Visual Preview
 
 <p align="center">
-  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/1.gif?raw=true" width="200" style="margin-right: 20px;" />
+  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/1.gif?raw=true" width="250" style="margin-right: 20px;" />
+    <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/3.gif?raw=true" width="250" />
   <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/2.gif?raw=true" width="200" style="margin-right: 20px;" />
-  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/3.gif?raw=true" width="200" />
 </p>
 
+
 <p align="center">
-  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/4.gif?raw=true" width="400" style="margin-bottom: 20px;" />
-  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/5.gif?raw=true" width="400" />
+  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/4.gif?raw=true" width="300" style="margin-bottom: 20px;" />
+  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/5.gif?raw=true" width="300" />
+</p>
+
+
+<p align="center">
+  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/6.gif?raw=true" width="300" style="margin-bottom: 20px;" />
+  <img src="https://github.com/ahmedgfouad/SoniSpace/blob/main/7.gif?raw=true" width="300" />
 </p>
 
 ---
