@@ -1,16 +1,69 @@
-# sonispace
+# 🌌 SoniSpace – 3D Data Sonification System
 
-A new Flutter project.
+A collaborative project developed as part of the [NASA International Space Apps Challenge 2023](https://www.spaceappschallenge.org/2023/find-a-team/sonispace/?tab=project&fbclid=IwAR0NSNpkVdlxxoUY5ehrreWCcpFhj5HndRQyQO-h3R3SBFz8_-XI_BqscAw), where it was awarded 🥇 First Place in **"Best Use of Technology"**.
 
-## Getting Started
+**SoniSpace** is an innovative system that transforms complex 3D models into **sound** using a process called **sonification**, allowing users to "hear" and interpret spatial structures in a completely new way.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🎯 Key Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🔊 **3D Data Sonification**: Converts 3D models into unique audio representations.
+- 🧠 **Educational Support**: Helps students grasp geometric and spatial concepts through sound.
+- ♿ **Accessibility**: Makes complex visual data more accessible for visually impaired users.
+- 🛠️ **Modular Design**: Clear separation between logic and interface to simplify development and customization.
+- 🌐 **Built with Team Collaboration**: Developed during the NASA Space Apps Challenge to create real-world impact.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📽️ Demo Video
+
+👉 [📱 Click here to watch the mobile demo video](https://drive.google.com/file/d/1HJJTAKu6N_HQDPYifSHhoI3JfZF7f5fD/view?usp=sharing)
+
+---
+
+## 🧠 How It Works
+
+1. **Input**: A 3D model file (e.g., Point Cloud or Mesh).
+2. **Processing**: Analyzes structure, depth, and spatial features.
+3. **Sonification**: Maps data to audio frequencies and spatial audio cues.
+4. **Output**: A unique audio stream representing the 3D model’s structure.
+
+---
+
+## 💡 Use Cases
+
+- 🎓 **Education**: Teach geometry and spatial reasoning interactively.
+- ♿ **Accessibility**: Help visually impaired users understand 3D content.
+- 🎨 **Art & Music**: Inspire creative experiences by combining audio and 3D data.
+- 🛰️ **Science & Space**: Sonify satellite or telescope data for alternative exploration.
+
+
+---
+
+## 🏆 Awards & Recognition
+
+- 🥇 **Best Use of Technology**  
+  Awarded at **NASA Space Apps Cairo 2023** for outstanding implementation of 3D data sonification.  
+  [🔗 View Official Post](https://www.facebook.com/photo/?fbid=727866899374610&set=pcb.727765516051415)
+
+- 🏅 **ALX Award**  
+  Recognized for innovation and impact during NASA Space Apps Cairo 2023.  
+  [🔗 View Official Post](https://www.facebook.com/photo/?fbid=727078856120081&set=a.549529553875013)
+
+---
+
+## 👨‍💻 My Contribution
+
+I contributed to:
+
+- ✅ Core system logic: the sonification engine and data interpretation
+- ✅ UI Design: building an intuitive and accessible interface
+---
+
+
+## 🙌 Acknowledgment
+
+This project was developed by a collaborative team as part of the  
+[NASA International Space Apps Challenge](https://www.spaceappschallenge.org/).
+
